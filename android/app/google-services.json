@@ -1,42 +1,42 @@
 {
   "project_info": {
-    "project_number": "197786243672",
-    "firebase_url": "https://vorwitfirebase.firebaseio.com",
-    "project_id": "vorwitfirebase",
-    "storage_bucket": "vorwitfirebase.appspot.com"
+    "project_number": "307364166668",
+    "firebase_url": "https://jittifirebase.firebaseio.com",
+    "project_id": "jittifirebase",
+    "storage_bucket": "jittifirebase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:197786243672:android:6b3d2307e1fcca65",
+        "mobilesdk_app_id": "1:307364166668:android:b972c667a2904e8a",
         "android_client_info": {
-          "package_name": "th.go.dopa.vorwitfirebase"
+          "package_name": "th.go.jnapp.jittifirebase"
         }
       },
       "oauth_client": [
         {
-          "client_id": "197786243672-9qd0eb5p2uqr84qiukg6stf9d6673ncd.apps.googleusercontent.com",
+          "client_id": "307364166668-r4f3jtbam56cssfptvhevo32iar9oek3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "th.go.dopa.vorwitfirebase",
-            "certificate_hash": "1203284f5b32dc5c5d57fe1f65d31b75c10f9ccf"
+            "package_name": "th.go.jnapp.jittifirebase",
+            "certificate_hash": "cb21af774fc42f169d6a2ab9962f23a385021fbc"
           }
         },
         {
-          "client_id": "197786243672-blcpt9np50pf35bn73mj46hqnup7dp4h.apps.googleusercontent.com",
+          "client_id": "307364166668-d0o91b88p5s1oljlcboj7420bv1akocp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCfn2sy_an9k_RTZ-IlAEOTuvfmtXmG3I0"
+          "current_key": "AIzaSyBEF4_tQ-4lSzalb5-9G7kL3ZWfXr9_ruA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "197786243672-blcpt9np50pf35bn73mj46hqnup7dp4h.apps.googleusercontent.com",
+              "client_id": "307364166668-d0o91b88p5s1oljlcboj7420bv1akocp.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

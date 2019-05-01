@@ -1,6 +1,4 @@
-//import 'package:flutter/cupertino.dart' as prefix0;
 import 'package:flutter/material.dart';
-//import 'package:flutter/services.dart';
 import '../screens/register.dart';
 
 class Authen extends StatefulWidget {
@@ -9,6 +7,17 @@ class Authen extends StatefulWidget {
 }
 
 class _AuthenState extends State<Authen> {
+  // For Form
+  final formKey = GlobalKey<FormState>();
+
+  // Constant
+  String titleHaveSpace = 'กรุณากรอกข้อมูลให้ครบ';
+  String titleEmailFalse = 'กรุณากรอกรูปแบบอีเมล์ให้ถูกต้อง';
+  String titlePasswordFalse = 'รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร';
+
+  // Explicit
+  String emailString, passwordString;
+
   Widget signUpButton(BuildContext context) {
     return RaisedButton.icon(
       icon: Icon(Icons.assignment_ind),
@@ -25,11 +34,18 @@ class _AuthenState extends State<Authen> {
   }
 
   Widget signInButton() {
-    return RaisedButton(
+    return RaisedButton.icon(
+      label: Text('Sign In'),
+      icon: Icon(Icons.account_circle),
       color: Colors.green[200],
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      child: Text('Sign In'),
-      onPressed: () {},
+      onPressed: () {
+        print('You Click Sign In');
+        if (formKey.currentState.validate()) {
+          formKey.currentState.save();
+          print('email ==>> $emailString, password ==>> $passwordString');
+        }
+      },
     );
   }
 
@@ -37,6 +53,16 @@ class _AuthenState extends State<Authen> {
     return TextFormField(
       decoration:
           InputDecoration(labelText: 'Email :', hintText: 'you@mail.com'),
+      validator: (String value) {
+        if (value.length == 0) {
+          return titleHaveSpace;
+        } else if (!((value.contains('@')) && (value.contains('.')))) {
+          return titleEmailFalse;
+        }
+      },
+      onSaved: (String value) {
+        emailString = value;
+      },
     );
   }
 
@@ -45,6 +71,14 @@ class _AuthenState extends State<Authen> {
       obscureText: true,
       decoration: InputDecoration(
           labelText: 'Password :', hintText: 'More 6 Charactor'),
+      validator: (String value) {
+        if (value.length < 6) {
+          return titlePasswordFalse;
+        }
+      },
+      onSaved: (String value) {
+        passwordString = value;
+      },
     );
   }
 
@@ -66,49 +100,52 @@ class _AuthenState extends State<Authen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      body: Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.greenAccent, Colors.white],
-                begin: Alignment(-1, -1))),
-        padding: EdgeInsets.only(top: 80.0),
-        alignment: Alignment(0, -1),
-        child: Column(
-          children: <Widget>[
-            Container(
-              width: 150.0,
-              height: 150.0,
-              child: showLogo(),
-            ),
-            Container(margin: EdgeInsets.only(top: 15.0), child: showAppName()),
-            Container(
-              margin: EdgeInsets.only(left: 50.0, right: 50.0),
-              child: emailTextFormField(),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 50.0, right: 50.0),
-              child: passwordTextFormField(),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 15.0),
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.only(right: 4.0),
-                      child: signInButton(),
-                    ),
+        resizeToAvoidBottomPadding: false,
+        body: Form(
+          key: formKey,
+          child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    colors: [Colors.greenAccent, Colors.white],
+                    begin: Alignment(-1, -1))),
+            padding: EdgeInsets.only(top: 80.0),
+            alignment: Alignment(0, -1),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  width: 90.0,
+                  height: 90.0,
+                  child: showLogo(),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 15.0), child: showAppName()),
+                Container(
+                  margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                  child: emailTextFormField(),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 50.0, right: 50.0),
+                  child: passwordTextFormField(),
+                ),
+                Container(
+                  margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 15.0),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Container(
+                          margin: EdgeInsets.only(right: 4.0),
+                          child: signInButton(),
+                        ),
+                      ),
+                      Expanded(
+                        child: signUpButton(context),
+                      )
+                    ],
                   ),
-                  Expanded(
-                    child: signUpButton(context),
-                  )
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
+                )
+              ],
+            ),
+          ),
+        ));
   }
 }

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "197786243672",
+    "firebase_url": "https://vorwitfirebase.firebaseio.com",
+    "project_id": "vorwitfirebase",
+    "storage_bucket": "vorwitfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197786243672:android:6b3d2307e1fcca65",
+        "android_client_info": {
+          "package_name": "th.go.dopa.vorwitfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197786243672-9qd0eb5p2uqr84qiukg6stf9d6673ncd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.go.dopa.vorwitfirebase",
+            "certificate_hash": "1203284f5b32dc5c5d57fe1f65d31b75c10f9ccf"
+          }
+        },
+        {
+          "client_id": "197786243672-blcpt9np50pf35bn73mj46hqnup7dp4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfn2sy_an9k_RTZ-IlAEOTuvfmtXmG3I0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197786243672-blcpt9np50pf35bn73mj46hqnup7dp4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
